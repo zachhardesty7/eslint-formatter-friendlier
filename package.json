@@ -1,13 +1,19 @@
 {
-  "name": "eslint-formatter-friendly",
-  "version": "7.0.0",
-  "description": " simple formatter/reporter for eslint that's friendly with Sublime Text and iterm2 'click to open file' functionality",
-  "repository": "royriojas/eslint-friendly-formatter",
+  "name": "eslint-formatter-friendlier",
+  "version": "0.0.1",
+  "description": "A simple formatter/reporter for ESLint that's friendlier with terminals \"click to open file\" functionality (works with Sublime Text and VS Code editors)",
+  "repository": "zachhardesty7/eslint-formatter-friendlier",
   "license": "MIT",
   "author": {
-    "name": "Roy Riojas",
-    "url": "http://royriojas.com"
+    "name": "Zach Hardesty",
+    "url": "https://zachhardesty.com"
   },
+  "contributors": [
+    {
+      "name": "Roy Riojas",
+      "url": "http://royriojas.com"
+    }
+  ],
   "main": "index.js",
   "files": [
     "index.js",
@@ -17,16 +23,14 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "beautify": "esbeautifier './index.js' 'test/specs/**/*.js'",
-    "beautify-check": "esbeautifier -k './index.js' 'test/specs/**/*.js'",
     "eslint": "eslint --format './index.js' index.js test/specs/ -c './configs/eslint.json'",
-    "lint-fix": "npm run beautify && npm run eslint -- --fix",
-    "lint": "npm run beautify-check && npm run eslint",
+    "lint-fix": "npm run eslint -- --fix",
+    "lint": "npm run eslint",
     "test": "npm run lint && FORCE_ITERM_HINT=true mocha-runner 'test/specs/**/*.js'",
     "test:update": "CHAI_JEST_SNAPSHOT_UPDATE_ALL=true npm test",
     "cover": "istanbul cover -x 'test/specs/**/*.js' mocha-runner 'test/specs/**/*.js' html text-summary",
     "watch": "npm run cover && watch-spawn -i -p 'test/specs/**/*.js' istanbul cover test/runner.js html text-summary",
-    "check": "npm run beautify-check && npm run eslint",
+    "check": "npm run eslint",
     "verify": "npm run check && npm test",
     "changelog": "changelogx -f markdown -o ./changelog.md",
     "do-changelog": "npm run changelog && git add ./changelog.md && git commit -m 'DOC: Generate changelog' --no-verify",
@@ -53,7 +57,6 @@
   "devDependencies": {
     "chai-jest-snapshot": "2.0.0",
     "changelogx": "^1.0.18",
-    "esbeautifier": "10.1.1",
     "eslint": "^2.10.2",
     "glob-expand": "0.2.1",
     "istanbul": "^0.3.17",
@@ -76,9 +79,9 @@
   },
   "changelogx": {
     "issueIDRegExp": "#(\\d+)",
-    "commitURL": "https://github.com/royriojas/eslint-formatter-friendly/commit/{0}",
+    "commitURL": "https://github.com/zachhardesty7/eslint-formatter-friendlier/commit/{0}",
     "authorURL": "https://github.com/{0}",
-    "issueIDURL": "https://github.com/royriojas/eslint-formatter-friendly/issues/{0}",
-    "projectName": "eslint-friendly-formatter"
+    "issueIDURL": "https://github.com/zachhardesty7/eslint-formatter-friendlier/issues/{0}",
+    "projectName": "eslint-formatter-friendlier"
   }
 }

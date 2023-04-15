@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`eslint-friendly-formatter --eff-filter option should produce the expected output for the given input: single-error 1`] = `
+exports[`eslint-formatter-friendlier --eff-filter option should produce the expected output for the given input: single-error 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m
@@ -18,7 +18,7 @@ exports[`eslint-friendly-formatter --eff-filter option should produce the expect
 "
 `;
 
-exports[`eslint-friendly-formatter EFF_FILTER option should produce the expected output for the given input: single-error 1`] = `
+exports[`eslint-formatter-friendlier EFF_FILTER option should produce the expected output for the given input: single-error 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m
@@ -36,7 +36,7 @@ exports[`eslint-friendly-formatter EFF_FILTER option should produce the expected
 "
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: basic 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file should produce the expected output for the given input: basic 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m
@@ -87,7 +87,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 "
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: fatal 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file should produce the expected output for the given input: fatal 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m
@@ -105,7 +105,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 [37m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: missing-line-column 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file should produce the expected output for the given input: missing-line-column 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m
@@ -141,7 +141,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 "
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: missing-messages 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file should produce the expected output for the given input: missing-messages 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
@@ -166,7 +166,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m"
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: missing-rule-id 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file should produce the expected output for the given input: missing-rule-id 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m
@@ -202,11 +202,11 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 "
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: no-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier absolute paths to file should produce the expected output for the given input: no-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: null-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier absolute paths to file should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: single-error 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file should produce the expected output for the given input: single-error 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m
@@ -242,7 +242,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 "
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: basic 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file, no gray should produce the expected output for the given input: basic 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m
@@ -293,7 +293,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 "
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: fatal 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file, no gray should produce the expected output for the given input: fatal 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [4mhttp://eslint.org/docs/rules/[24m
@@ -311,7 +311,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 [37m[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: missing-line-column 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file, no gray should produce the expected output for the given input: missing-line-column 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[24m
@@ -347,7 +347,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 "
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: missing-messages 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file, no gray should produce the expected output for the given input: missing-messages 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m
@@ -372,7 +372,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
   1  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m"
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: missing-rule-id 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file, no gray should produce the expected output for the given input: missing-rule-id 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[24m
@@ -408,11 +408,11 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 "
 `;
 
-exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: no-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier absolute paths to file, no gray should produce the expected output for the given input: no-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: null-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier absolute paths to file, no gray should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: single-error 1`] = `
+exports[`eslint-formatter-friendlier absolute paths to file, no gray should produce the expected output for the given input: single-error 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m
@@ -448,7 +448,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 "
 `;
 
-exports[`eslint-friendly-formatter custom rules links open google search should produce the expected output for the given input: single-error 1`] = `
+exports[`eslint-formatter-friendlier custom rules links open google search should produce the expected output for the given input: single-error 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m
@@ -484,7 +484,7 @@ exports[`eslint-friendly-formatter custom rules links open google search should 
 "
 `;
 
-exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: basic 1`] = `
+exports[`eslint-formatter-friendlier formatter should produce the expected output for the given input: basic 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m
@@ -535,7 +535,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 "
 `;
 
-exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: fatal 1`] = `
+exports[`eslint-formatter-friendlier formatter should produce the expected output for the given input: fatal 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m
@@ -553,7 +553,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 [37m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
-exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: missing-line-column 1`] = `
+exports[`eslint-formatter-friendlier formatter should produce the expected output for the given input: missing-line-column 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m
@@ -589,7 +589,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 "
 `;
 
-exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: missing-messages 1`] = `
+exports[`eslint-formatter-friendlier formatter should produce the expected output for the given input: missing-messages 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
@@ -614,7 +614,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m"
 `;
 
-exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: missing-rule-id 1`] = `
+exports[`eslint-formatter-friendlier formatter should produce the expected output for the given input: missing-rule-id 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m
@@ -650,11 +650,11 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 "
 `;
 
-exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: no-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier formatter should produce the expected output for the given input: no-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: null-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier formatter should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: single-error 1`] = `
+exports[`eslint-formatter-friendlier formatter should produce the expected output for the given input: single-error 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m
@@ -690,7 +690,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 "
 `;
 
-exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: basic 1`] = `
+exports[`eslint-formatter-friendlier no gray should produce the expected output for the given input: basic 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m
@@ -741,7 +741,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 "
 `;
 
-exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: fatal 1`] = `
+exports[`eslint-formatter-friendlier no gray should produce the expected output for the given input: fatal 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [4mhttp://eslint.org/docs/rules/[24m
@@ -759,7 +759,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 [37m[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
 `;
 
-exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: missing-line-column 1`] = `
+exports[`eslint-formatter-friendlier no gray should produce the expected output for the given input: missing-line-column 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[24m
@@ -795,7 +795,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 "
 `;
 
-exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: missing-messages 1`] = `
+exports[`eslint-formatter-friendlier no gray should produce the expected output for the given input: missing-messages 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m
@@ -820,7 +820,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
   1  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m"
 `;
 
-exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: missing-rule-id 1`] = `
+exports[`eslint-formatter-friendlier no gray should produce the expected output for the given input: missing-rule-id 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[24m
@@ -856,11 +856,11 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 "
 `;
 
-exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: no-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier no gray should produce the expected output for the given input: no-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: null-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier no gray should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: single-error 1`] = `
+exports[`eslint-formatter-friendlier no gray should produce the expected output for the given input: single-error 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m
@@ -896,7 +896,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 "
 `;
 
-exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: basic 1`] = `
+exports[`eslint-formatter-friendlier no links to rules should produce the expected output for the given input: basic 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [37mno-unused-vars[39m
@@ -947,7 +947,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 "
 `;
 
-exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: fatal 1`] = `
+exports[`eslint-formatter-friendlier no links to rules should produce the expected output for the given input: fatal 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  
@@ -965,7 +965,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 [37m[39m  1  [37mundefined[39m"
 `;
 
-exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: missing-line-column 1`] = `
+exports[`eslint-formatter-friendlier no links to rules should produce the expected output for the given input: missing-line-column 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  
@@ -1001,7 +1001,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 "
 `;
 
-exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: missing-messages 1`] = `
+exports[`eslint-formatter-friendlier no links to rules should produce the expected output for the given input: missing-messages 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [37mcurly[39m
@@ -1026,7 +1026,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
   1  [37mcurly[39m"
 `;
 
-exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: missing-rule-id 1`] = `
+exports[`eslint-formatter-friendlier no links to rules should produce the expected output for the given input: missing-rule-id 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  
@@ -1062,11 +1062,11 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 "
 `;
 
-exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: no-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier no links to rules should produce the expected output for the given input: no-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: null-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier no links to rules should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: single-error 1`] = `
+exports[`eslint-formatter-friendlier no links to rules should produce the expected output for the given input: single-error 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [37mno-unused-vars[39m
@@ -1102,7 +1102,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 "
 `;
 
-exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: basic 1`] = `
+exports[`eslint-formatter-friendlier scheme should produce the expected output for the given input: basic 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m
@@ -1158,7 +1158,7 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
 "
 `;
 
-exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: fatal 1`] = `
+exports[`eslint-formatter-friendlier scheme should produce the expected output for the given input: fatal 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m
@@ -1177,7 +1177,7 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
 [37m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
-exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: missing-line-column 1`] = `
+exports[`eslint-formatter-friendlier scheme should produce the expected output for the given input: missing-line-column 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m
@@ -1216,7 +1216,7 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
 "
 `;
 
-exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: missing-messages 1`] = `
+exports[`eslint-formatter-friendlier scheme should produce the expected output for the given input: missing-messages 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
@@ -1243,7 +1243,7 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m"
 `;
 
-exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: missing-rule-id 1`] = `
+exports[`eslint-formatter-friendlier scheme should produce the expected output for the given input: missing-rule-id 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m
@@ -1282,11 +1282,11 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
 "
 `;
 
-exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: no-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier scheme should produce the expected output for the given input: no-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: null-results-provided 1`] = `""`;
+exports[`eslint-formatter-friendlier scheme should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
-exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: single-error 1`] = `
+exports[`eslint-formatter-friendlier scheme should produce the expected output for the given input: single-error 1`] = `
 "]1337;CurrentDir=/path/to/working/directory
 
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m
