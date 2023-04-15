@@ -55,6 +55,11 @@
     "npm run verify"
   ],
   "devDependencies": {
+    "@types/babel__code-frame": "^7.0.3",
+    "@types/eslint": "^8.37.0",
+    "@types/extend": "^3.0.1",
+    "@types/node": "^18.15.11",
+    "@types/text-table": "^0.2.2",
     "chai-jest-snapshot": "2.0.0",
     "changelogx": "^1.0.18",
     "eslint": "^2.10.2",
@@ -71,11 +76,11 @@
     "write": "^0.2.0"
   },
   "dependencies": {
-    "@babel/code-frame": "7.0.0",
-    "chalk": "2.4.2",
-    "extend": "3.0.2",
-    "strip-ansi": "5.2.0",
-    "text-table": "0.2.0"
+    "@babel/code-frame": "^7.21.4",
+    "chalk": "^4.1.2",
+    "extend": "^3.0.2",
+    "strip-ansi": "^6.0.1",
+    "text-table": "^0.2.0"
   },
   "changelogx": {
     "issueIDRegExp": "#(\\d+)",
