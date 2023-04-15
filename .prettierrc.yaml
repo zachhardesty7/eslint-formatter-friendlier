@@ -1,0 +1,36 @@
+--- # https://prettier.io/docs/en/options.html
+# popular codebase examples
+# https://github.com/storybookjs/linter-config/blob/master/prettier.config.js
+# https://github.com/facebook/react/blob/main/.prettierrc.js
+
+# #region - customized, non-default options
+# https://prettier.io/docs/en/rationale.html#print-width
+printWidth: 88 # <- 80
+# TODO: debate changing
+trailingComma: all # <- es5
+# TESTING:
+proseWrap: always # <- preserve
+singleQuote: true # <- false
+# #endregion
+
+# #region - intentional defaults
+# does not matter (usually) when `useTabs` is true
+tabWidth: 2
+useTabs: false
+semi: true
+# TODO: debate changing
+quoteProps: as-needed
+jsxSingleQuote: false
+bracketSpacing: true
+bracketSameLine: false
+arrowParens: always
+endOfLine: lf
+# #endregion
+
+# #region - plugins
+# REVIEW: why doesn't 'preserve' work?
+# https://github.com/prettier/plugin-xml
+xmlWhitespaceSensitivity: "ignore" # <- strict
+# https://github.com/hosseinmd/prettier-plugin-jsdoc
+jsdocCapitalizeDescription: false
+# #endregion

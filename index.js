@@ -1,6 +1,4 @@
-/**
- * Based on Stylish reporter from Sindre Sorhus
- */
+/** Based on Stylish reporter from Sindre Sorhus */
 'use strict';
 
 var chalk = require('chalk'),
@@ -14,87 +12,88 @@ var process = require('./process');
 var fs = require('fs');
 var codeFrameColumns = require('@babel/code-frame').codeFrameColumns;
 
-
 //------------------------------------------------------------------------------
 // Helpers
 //------------------------------------------------------------------------------
 
 /**
  * Given a word and a count, append an s if count is not one.
+ *
  * @param {string} word A word in its singular form.
  * @param {int} count A number controlling whether word should be pluralized.
  * @returns {string} The original word with an s on the end if count is not one.
  */
 function pluralize(word, count) {
-  return (count === 1 ? word : word + 's');
+  return count === 1 ? word : word + 's';
 }
 
-var parseBoolEnvVar = function(varName) {
-  var env = process.env || { };
+var parseBoolEnvVar = function (varName) {
+  var env = process.env || {};
   return env[varName] === 'true';
 };
 
-var parseEnvVal = function(varName) {
-  var env = process.env || { };
+var parseEnvVal = function (varName) {
+  var env = process.env || {};
   return env[varName];
 };
 
-var subtleLog = function(args) {
+var subtleLog = function (args) {
   return parseBoolEnvVar('EFF_NO_GRAY') ? args : chalk.gray(args);
 };
 
-var getEnvVar = function(varName) {
-  var env = process.env || { };
+var getEnvVar = function (varName) {
+  var env = process.env || {};
   return env[varName] || false;
 };
 
-var getFileLink = function(_path, line, column) {
+var getFileLink = function (_path, line, column) {
   var scheme = getEnvVar('EFF_EDITOR_SCHEME');
   if (scheme === false) {
     return false;
   }
-  return scheme.replace('{file}', encodeURIComponent(_path)).replace('{line}', line).replace('{column}', column);
+  return scheme
+    .replace('{file}', encodeURIComponent(_path))
+    .replace('{line}', line)
+    .replace('{column}', column);
 };
 
-var getKeyLink = function(key) {
+var getKeyLink = function (key) {
   var noLinkRules = parseBoolEnvVar('EFF_NO_LINK_RULES');
-  let searchEngineLink = getEnvVar('EFF_RULE_SEARCH_LINK') || 'https://google.com/search?q=';
+  let searchEngineLink =
+    getEnvVar('EFF_RULE_SEARCH_LINK') || 'https://google.com/search?q=';
   var url = key.indexOf('/') > -1 ? searchEngineLink : 'http://eslint.org/docs/rules/';
-  return (!noLinkRules) ? chalk.underline(subtleLog(url + chalk.white(encodeURIComponent(key)))) : chalk.white(key);
+  return !noLinkRules
+    ? chalk.underline(subtleLog(url + chalk.white(encodeURIComponent(key))))
+    : chalk.white(key);
 };
 
-var printSummary = function(hash, title, method) {
+var printSummary = function (hash, title, method) {
   var res = '\n\n' + chalk[method](title + ':') + chalk.white('\n');
   res += table(
-    Object.keys(hash).sort(function(a, b) {
-      return hash[a] > hash[b] ? -1 : 1;
-    }).map(function(key) {
-      return [
-        '',
-        hash[key],
-        getKeyLink(key)
-      ];
-    }), {
-      align: [
-        '',
-        'r',
-        'l'
-      ],
-      stringLength: function(str) {
+    Object.keys(hash)
+      .sort(function (a, b) {
+        return hash[a] > hash[b] ? -1 : 1;
+      })
+      .map(function (key) {
+        return ['', hash[key], getKeyLink(key)];
+      }),
+    {
+      align: ['', 'r', 'l'],
+      stringLength: function (str) {
         return stripAnsi(str).length;
-      }
-    });
+      },
+    },
+  );
   return res;
 };
 
-var tryParseJSONObject = function(jsonString) {
+var tryParseJSONObject = function (jsonString) {
   try {
-      var o = JSON.parse(jsonString);
-      if (o && typeof o === "object") {
-          return o;
-      }
-  }
-  catch (e) { }
+    var o = JSON.parse(jsonString);
+    if (o && typeof o === 'object') {
+      return o;
+    }
+  } catch (e) {}
 
   return false;
 };
@@ -103,8 +102,7 @@ var tryParseJSONObject = function(jsonString) {
 // Public Interface
 //------------------------------------------------------------------------------
 
-module.exports = function(results) {
-
+module.exports = function (results) {
   var output = '\n',
     total = 0,
     errors = 0,
@@ -121,22 +119,30 @@ module.exports = function(results) {
   var filterRule = parseEnvVal('EFF_FILTER');
   var showSource = !parseBoolEnvVar('EFF_NO_SOURCE');
 
-  var errorsHash = { };
-  var warningsHash = { };
+  var errorsHash = {};
+  var warningsHash = {};
 
-  results.forEach(function(result) {
+  results.forEach(function (result) {
     var messages = result.messages || [];
     const fileSource = result.source || fs.readFileSync(result.filePath, 'utf8');
-    entries = entries.concat(messages.map(function(message) {
-      return extend({
-        filePath: absolutePathsToFile ? path.resolve(result.filePath) : path.relative('.', result.filePath)
-      }, message, {
-        fileSource
-      });
-    }));
+    entries = entries.concat(
+      messages.map(function (message) {
+        return extend(
+          {
+            filePath: absolutePathsToFile
+              ? path.resolve(result.filePath)
+              : path.relative('.', result.filePath),
+          },
+          message,
+          {
+            fileSource,
+          },
+        );
+      }),
+    );
   });
 
-  entries.sort(function(a, b) {
+  entries.sort(function (a, b) {
     if (a.severity > b.severity) {
       return 1;
     }
@@ -177,7 +183,9 @@ module.exports = function(results) {
 
   var lastRuleId;
 
-  output += entries.reduce(function(seq, message) {
+  output +=
+    entries
+      .reduce(function (seq, message) {
         var messageType;
 
         if (filterRule) {
@@ -209,7 +217,7 @@ module.exports = function(results) {
         }
 
         function renderLink() {
-          return (link === false ? '' : '     ' + chalk.underline(subtleLog(link)));
+          return link === false ? '' : '     ' + chalk.underline(subtleLog(link));
         }
 
         function renderDescription() {
@@ -217,71 +225,87 @@ module.exports = function(results) {
         }
 
         function renderFileLink() {
-          return (showSource ? '\n' : '') + '     ' + (link === false ? chalk.underline(filename) : filename);
+          return (
+            (showSource ? '\n' : '') +
+            '     ' +
+            (link === false ? chalk.underline(filename) : filename)
+          );
         }
 
         function renderSourceCode() {
           const location = {
             start: {
               line: message.line,
-              column: message.column
-            }
+              column: message.column,
+            },
           };
-          const codeFrameOptions = tryParseJSONObject(getEnvVar("EFF_CODE_FRAME_OPTIONS")) || { highlightCode: true };
+          const codeFrameOptions = tryParseJSONObject(
+            getEnvVar('EFF_CODE_FRAME_OPTIONS'),
+          ) || { highlightCode: true };
 
-          return showSource ? codeFrame(
-              message.fileSource,
-              location,
-              codeFrameOptions
-            ).split('\n').map(l => '   ' + l).join('\n') : '';
+          return showSource
+            ? codeFrame(message.fileSource, location, codeFrameOptions)
+                .split('\n')
+                .map((l) => '   ' + l)
+                .join('\n')
+            : '';
         }
 
         function createLine(arr) {
-          return arr.filter(function(l) {
-            return !!(l || '').trim();
-          }).join('\n');
+          return arr
+            .filter(function (l) {
+              return !!(l || '').trim();
+            })
+            .join('\n');
         }
 
         if (groupByIssue) {
           var isSameIssueAsLastOne = lastRuleId === message.ruleId;
           lastRuleId = message.ruleId;
 
-          seq.push(createLine([
-            !isSameIssueAsLastOne ? renderTitle() : '',
-            !isSameIssueAsLastOne ? renderLink() : '',
-            !isSameIssueAsLastOne ? renderDescription() : '',
-            renderFileLink(),
-            renderSourceCode()
-          ]));
-
+          seq.push(
+            createLine([
+              !isSameIssueAsLastOne ? renderTitle() : '',
+              !isSameIssueAsLastOne ? renderLink() : '',
+              !isSameIssueAsLastOne ? renderDescription() : '',
+              renderFileLink(),
+              renderSourceCode(),
+            ]),
+          );
         } else {
-          seq.push(createLine([
-            renderTitle(),
-            renderLink(),
-            renderDescription(),
-            renderFileLink(),
-            renderSourceCode()
-          ]));
+          seq.push(
+            createLine([
+              renderTitle(),
+              renderLink(),
+              renderDescription(),
+              renderFileLink(),
+              renderSourceCode(),
+            ]),
+          );
         }
 
         return seq;
-      }, []).join('\n') + '\n\n';
+      }, [])
+      .join('\n') + '\n\n';
 
   total = entries.length;
 
   if (total > 0) {
-    output += chalk[summaryColor].bold([
-        '✘ ',
-        total,
-        pluralize(' problem', total),
-        ' (',
-        errors,
-        pluralize(' error', errors),
-        ', ',
-        warnings,
-        pluralize(' warning', warnings),
-        ')'
-      ].join('')) + chalk.white('\n');
+    output +=
+      chalk[summaryColor].bold(
+        [
+          '✘ ',
+          total,
+          pluralize(' problem', total),
+          ' (',
+          errors,
+          pluralize(' error', errors),
+          ', ',
+          warnings,
+          pluralize(' warning', warnings),
+          ')',
+        ].join(''),
+      ) + chalk.white('\n');
 
     if (errors > 0) {
       output += printSummary(errorsHash, 'Errors', 'red');
@@ -292,7 +316,10 @@ module.exports = function(results) {
     }
   }
 
-  if (process.env.FORCE_ITERM_HINT === 'true' || (process.stdout.isTTY && !process.env.CI)) {
+  if (
+    process.env.FORCE_ITERM_HINT === 'true' ||
+    (process.stdout.isTTY && !process.env.CI)
+  ) {
     output = '\u001B]1337;CurrentDir=' + process.cwd() + '\u0007' + output;
   }
 
