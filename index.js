@@ -56,17 +56,15 @@ var getFileLink = function (_path, line, column) {
     .replace('{column}', column);
 };
 
-var getKeyLink = function (key) {
-  var noLinkRules = parseBoolEnvVar('EFF_NO_LINK_RULES');
+var getKeyLink = function (key, resultsMeta) {
+  const metaUrl = resultsMeta?.rulesMeta?.[key]?.docs?.url;
   let searchEngineLink =
     getEnvVar('EFF_RULE_SEARCH_LINK') || 'https://google.com/search?q=';
-  var url = key.indexOf('/') > -1 ? searchEngineLink : 'http://eslint.org/docs/rules/';
-  return !noLinkRules
-    ? chalk.underline(subtleLog(url + chalk.white(encodeURIComponent(key))))
-    : chalk.white(key);
+  var url = metaUrl || `${searchEngineLink}${key}`;
+  return chalk.underline(subtleLog(url));
 };
 
-var printSummary = function (hash, title, method) {
+var printSummary = function (hash, title, method, resultsMeta) {
   var res = '\n\n' + chalk[method](title + ':') + chalk.white('\n');
   res += table(
     Object.keys(hash)
@@ -74,10 +72,14 @@ var printSummary = function (hash, title, method) {
         return hash[a] > hash[b] ? -1 : 1;
       })
       .map(function (key) {
-        return ['', hash[key], getKeyLink(key)];
-      }),
+        return [
+          ['', hash[key], chalk.white(key)],
+          ['', '', `  ${getKeyLink(key, resultsMeta)}`],
+        ];
+      })
+      .flat(),
     {
-      align: ['', 'r', 'l'],
+      align: [undefined, 'r', 'l'],
       stringLength: function (str) {
         return stripAnsi(str).length;
       },
@@ -128,10 +130,13 @@ function format(results, resultsMeta) {
   var warningsHash = {};
 
   results.forEach(function (result) {
-    var messages = result.messages || [];
+    if (!result.messages || result.messages.length === 0) {
+      return;
+    }
+
     const fileSource = result.source || fs.readFileSync(result.filePath, 'utf8');
     entries = entries.concat(
-      messages.map(function (message) {
+      result.messages.map(function (message) {
         return extend(
           {
             filePath: absolutePathsToFile
@@ -218,7 +223,7 @@ function format(results, resultsMeta) {
         var filename = subtleLog(filePath + ':' + line + ':' + column);
 
         function renderTitle() {
-          return '\n  ' + messageType + '  ' + getKeyLink(message.ruleId || '');
+          return `\n  ${messageType}  ${chalk.white(message.ruleId)}${!parseBoolEnvVar('EFF_NO_LINK_RULES') ? ` - ${getKeyLink(message.ruleId || '', resultsMeta)}` : ''}`;
         }
 
         function renderLink() {
@@ -272,7 +277,6 @@ function format(results, resultsMeta) {
             createLine([
               !isSameIssueAsLastOne ? renderTitle() : '',
               !isSameIssueAsLastOne ? renderLink() : '',
-              !isSameIssueAsLastOne ? renderDescription() : '',
               renderFileLink(),
               renderSourceCode(),
             ]),
@@ -313,11 +317,11 @@ function format(results, resultsMeta) {
       ) + chalk.white('\n');
 
     if (errors > 0) {
-      output += printSummary(errorsHash, 'Errors', 'red');
+      output += printSummary(errorsHash, 'Errors', 'red', resultsMeta) + '\n';
     }
 
     if (warnings > 0) {
-      output += printSummary(warningsHash, 'Warnings', 'yellow') + '\n';
+      output += printSummary(warningsHash, 'Warnings', 'yellow', resultsMeta) + '\n';
     }
   }
 

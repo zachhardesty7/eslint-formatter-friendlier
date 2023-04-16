@@ -1,6 +1,6 @@
 {
   "name": "eslint-formatter-friendlier",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A simple formatter/reporter for ESLint that's friendlier with terminals \"click to open file\" functionality (works with Sublime Text and VS Code editors)",
   "repository": "zachhardesty7/eslint-formatter-friendlier",
   "license": "MIT",
