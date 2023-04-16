@@ -19,7 +19,7 @@ var codeFrameColumns = require('@babel/code-frame').codeFrameColumns;
  * Given a word and a count, append an s if count is not one.
  *
  * @param {string} word A word in its singular form.
- * @param {int} count A number controlling whether word should be pluralized.
+ * @param {number} count A number controlling whether word should be pluralized.
  * @returns {string} The original word with an s on the end if count is not one.
  */
 function pluralize(word, count) {
@@ -101,7 +101,13 @@ var tryParseJSONObject = function (jsonString) {
 // Public Interface
 //------------------------------------------------------------------------------
 
-module.exports = function (results) {
+/**
+ * @param {import('eslint').ESLint.LintResult[]} results The lint results to format.
+ * @param {import('eslint').ESLint.LintResultData} resultsMeta Warning count and max
+ *   threshold.
+ * @returns {string | Promise<string>} The formatted lint results.
+ */
+function format(results, resultsMeta) {
   var output = '\n',
     total = 0,
     errors = 0,
@@ -243,7 +249,7 @@ module.exports = function (results) {
           ) || { highlightCode: true };
 
           return showSource
-            ? codeFrame(message.fileSource, location, codeFrameOptions)
+            ? codeFrameColumns(message.fileSource, location, codeFrameOptions)
                 .split('\n')
                 .map((l) => '   ' + l)
                 .join('\n')
@@ -323,4 +329,6 @@ module.exports = function (results) {
   }
 
   return total > 0 ? output : '';
-};
+}
+
+module.exports = format;
