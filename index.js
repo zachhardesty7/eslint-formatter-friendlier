@@ -8,7 +8,6 @@ var chalk = require('chalk'),
 
 var path = require('path');
 
-var process = require('./process');
 var fs = require('fs');
 var codeFrameColumns = require('@babel/code-frame').codeFrameColumns;
 
