@@ -9,6 +9,7 @@ var chalk = require('chalk'),
 var path = require('path');
 
 var fs = require('fs');
+const { sortBy } = require('lodash');
 var codeFrameColumns = require('@babel/code-frame').codeFrameColumns;
 
 //------------------------------------------------------------------------------
@@ -152,44 +153,12 @@ function format(results, resultsMeta) {
     );
   });
 
-  entries.sort(function (a, b) {
-    if (a.severity > b.severity) {
-      return 1;
-    }
-    if (a.severity < b.severity) {
-      return -1;
-    }
-
-    if (groupByIssue) {
-      if (a.ruleId > b.ruleId) {
-        return 1;
-      }
-      if (a.ruleId < b.ruleId) {
-        return -1;
-      }
-    }
-
-    var pathSort = a.filePath.localeCompare(b.filePath);
-    if (pathSort) {
-      return pathSort;
-    }
-
-    if (a.line > b.line) {
-      return 1;
-    }
-    if (a.line < b.line) {
-      return -1;
-    }
-
-    if (a.column > b.column) {
-      return 1;
-    }
-    if (a.column < b.column) {
-      return -1;
-    }
-
-    return 0;
-  });
+  entries = sortBy(
+    entries,
+    ['severity', groupByIssue && 'ruleId', 'filePath', 'line', 'column'].filter(
+      Boolean,
+    ),
+  );
 
   var lastRuleId;
 

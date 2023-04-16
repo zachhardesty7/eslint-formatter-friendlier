@@ -1,6 +1,6 @@
 {
   "name": "eslint-formatter-friendlier",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple formatter/reporter for ESLint that's friendlier with terminals \"click to open file\" functionality (works with Sublime Text and VS Code editors)",
   "repository": "zachhardesty7/eslint-formatter-friendlier",
   "license": "MIT",
@@ -16,8 +16,7 @@
   ],
   "main": "index.js",
   "files": [
-    "index.js",
-    "process.js"
+    "index.js"
   ],
   "engines": {
     "node": ">=0.10.0"
@@ -58,6 +57,7 @@
     "@types/babel__code-frame": "^7.0.3",
     "@types/eslint": "^8.37.0",
     "@types/extend": "^3.0.1",
+    "@types/lodash": "^4.14.194",
     "@types/node": "^18.15.11",
     "@types/text-table": "^0.2.2",
     "chai-jest-snapshot": "2.0.0",
@@ -79,6 +79,7 @@
     "@babel/code-frame": "^7.21.4",
     "chalk": "^4.1.2",
     "extend": "^3.0.2",
+    "lodash": "^4.17.21",
     "strip-ansi": "^6.0.1",
     "text-table": "^0.2.0"
   },
